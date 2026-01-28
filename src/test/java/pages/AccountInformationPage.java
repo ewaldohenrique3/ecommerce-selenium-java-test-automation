@@ -28,8 +28,8 @@ public class AccountInformationPage{
     private final By cityInput = By.id("city");
     private final By zipcodeInput = By.id("zipcode");
     private final By mobileNumberInput = By.id("mobile_number");
-    private final By createAccountButton = By.cssSelector("#form > div > div > div > div > form > button");
-    public final By accountCreationMessage = By.cssSelector("#form > div > div > div > h2 > b");
+    private final By createAccountButton = By.cssSelector("[data-qa='create-account']");
+    public final By accountCreationMessage = By.cssSelector("[data-qa='account-created']");
 
     public String getAccountCreationSuccessMessage() {
         return driver.findElement(accountCreationMessage).getText();

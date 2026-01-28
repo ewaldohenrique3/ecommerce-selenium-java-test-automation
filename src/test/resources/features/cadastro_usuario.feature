@@ -2,7 +2,7 @@
 
   @cadastro
   Funcionalidade: Cadastro de usuario
-    Eu como novo usuario
+    Como novo usuario
     Quero me cadastrar
     Para fazer compras
 

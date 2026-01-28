@@ -22,7 +22,7 @@ import static io.cucumber.junit.platform.engine.Constants.FILTER_TAGS_PROPERTY_N
 )
 @ConfigurationParameter(
         key = FILTER_TAGS_PROPERTY_NAME,
-        value = "@cadastro_sucesso"
+        value = ""
 )
 
 public class RunCucumberTest {
