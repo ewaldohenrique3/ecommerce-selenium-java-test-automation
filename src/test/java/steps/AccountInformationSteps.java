@@ -18,24 +18,26 @@ public class AccountInformationSteps{
 
     @Dado("que o usuario acessa a pagina de cadastro")
     public void que_o_usuario_acessa_a_pagina_de_cadastro() {
-        authpage.acessLoginScreen();
+        authpage.accessLoginScreen();
     }
 
     @Quando("informa nome e email validos")
     public void informa_nome_e_email_validos() {
+        Utils.randomEmail = utils.getRandomEmail();
         authpage.fillEmailCreate();
-        authpage.fillNameCreate("Jonh Embaixadinha");
+        authpage.fillNameCreate("João da Silva");
         authpage.clickSignupButton();
     }
     @Quando("preenche os dados obrigatorios para criacao da conta")
     public void preenche_os_dos_obrigatorios_para_criacao_da_conta() {
         utils.waitElementBePresent(By.id("id_gender1"),10);
         accountInformationPage.selectGender(1);
-        accountInformationPage.fillFirstNameInput("Jonh");
-        accountInformationPage.fillLastNameInput("Embaixadinha");
-        accountInformationPage.fillPasswordInput("123456");
+        accountInformationPage.fillFirstNameInput("João");
+        accountInformationPage.fillLastNameInput("da Silva");
+        Utils.randomPassword = utils.getRandomPassword(12);
+        accountInformationPage.fillPasswordInput(Utils.randomPassword);
         accountInformationPage.selectDateBirth("28","7","2000");
-        accountInformationPage.fillCompanyInput("QAZANDO");
+        accountInformationPage.fillCompanyInput("SpaceX");
         accountInformationPage.fillAddressInput("Automated Test Street, 123");
         accountInformationPage.selectCountry("United States");
         accountInformationPage.fillStateInput("Florida (FL)");
